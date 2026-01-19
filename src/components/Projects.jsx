@@ -1,29 +1,16 @@
 import React, { useState } from "react";
-// import orbitPulseImg from "/public/project-images/orbitPulseImg.PNG";
-// import printflyImg from "/public/project-images/printflyImg.PNG";
-// import projectsImg from "/public/project-images/projectsImg.PNG";
-// import TicTacImg from "/public/project-images/TicTacImg.PNG";
-// import databaseImg from "/public/project-images/databaseImg.PNG";
-// import ecommerceImg from "/public/project-images/ecommerceImg.PNG";
-// import todoImg from "/public/project-images/todoImg.PNG";
-// import currencyImg from "/public/project-images/currencyImg.PNG";
-// import therapyImg from "/public/project-images/therapyImg.PNG";
-// import investmentImg from "/public/project-images/investmentImg.PNG";
-// import landingImg1 from "/public/project-images/landingImg1.PNG";
-// import landingImg2 from "/public/project-images/landingImg2.PNG";
-
-import orbitPulseImg from "../assets/contact.png";
-import printflyImg from "../assets/contact.png";
-import projectsImg from "../assets/contact.png";
-import TicTacImg from "../assets/contact.png";
-import databaseImg from "../assets/contact.png";
-import ecommerceImg from "../assets/contact.png";
-import todoImg from "../assets/contact.png";
-import currencyImg from "../assets/contact.png";
-import therapyImg from "../assets/contact.png";
-import investmentImg from "../assets/contact.png";
-import landingImg1 from "../assets/contact.png";
-import landingImg2 from "../assets/contact.png";
+import orbitPulseImg from "../assets/project-images/orbitPulseImg.PNG";
+import printflyImg from "../assets/project-images/printflyImg.PNG";
+import projectsImg from "../assets/project-images/projectsImg.PNG";
+import TicTacImg from "../assets/project-images/TicTacImg.PNG";
+import databaseImg from "../assets/project-images/databaseImg.PNG";
+import ecommerceImg from "../assets/project-images/ecommerceImg.PNG";
+import todoImg from "../assets/project-images/todoImg.PNG";
+import currencyImg from "../assets/project-images/currencyImg.PNG";
+import therapyImg from "../assets/project-images/therapyImg.PNG";
+import investmentImg from "../assets/project-images/investmentImg.PNG";
+import landingImg1 from "../assets/project-images/landingImg1.PNG";
+import landingImg2 from "../assets/project-images/landingImg2.PNG";
 
 const projects = [
   {

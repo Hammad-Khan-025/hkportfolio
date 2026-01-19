@@ -20,7 +20,7 @@ export default function SkillsSection() {
           </span>
           <div className="h-[1px] w-8 bg-[#2d6a61]"></div>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-[#308074] text-center sm:text-left mb-10 sm:mb-6">
+        <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-[#134e4a] text-center sm:text-left mb-10 sm:mb-6">
           Technical Skills
         </h2>
         <p className="text-gray-600 max-w-2xl hidden sm:block">

@@ -1,40 +1,53 @@
-import React from 'react';
-import heroImage from '../assets/heroImage.png';
-import personImage from '../assets//my-pic.png';
+import React from "react";
+import heroImage from "../assets/heroImage.png";
+import personImage from "../assets//my-pic.png";
+import CV from "../assets//Hammadkhan-CV.pdf";
 
 const HeroSection = () => {
+  const whatsappNumber = "+923169343846";
 
-    const whatsappNumber = "+923169343846";
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/${whatsappNumber}`, "_blank");
+  };
 
-const openWhatsApp = () => {
-  window.open(`https://wa.me/${whatsappNumber}`, "_blank");
-};
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "Hammad-Khan-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
-    <section 
+    <section
       className="relative min-h-[calc(100vh-5.5rem)] w-full flex items-center justify-center bg-cover bg-center bg-no-repeat  py-5 md:py-20 md:px-6"
-      style={{ 
+      style={{
         // Replace 'your-bg-image.png' with your actual file path
-        backgroundImage: `url(${heroImage})` 
+        backgroundImage: `url(${heroImage})`,
       }}
     >
       {/* Main Card Container */}
       <div className="relative z-10 max-w-6xl w-full flex flex-col md:flex-row items-stretch overflow-hidden pt-22">
-        
         {/* Left: Text Content */}
         <div className="w-full md:w-3/4 p-10 md:p-20 flex flex-col justify-center">
           <h2 className="text-[#062628] text-4xl md:text-5xl font-bold mb-3 font-bangla">
-            Hello, I'm <span className="text-[#117379]">Hammad Khan</span> 
+            Hello, I'm <span className="text-[#117379]">Hammad Khan</span>
           </h2>
           <h3 className="text-[#117379] text-xl md:text-2xl font-bold mb-6">
             Frontend Developer
           </h3>
           <p className="text-gray-500 leading-relaxed mb-10 text-base md:text-lg max-w-md">
-            I create responsive, user-friendly web interfaces using HTML, CSS, Tailwind, JavaScript, and React. Passionate about solving problems and bringing ideas to life.
+            I create responsive, user-friendly web interfaces using HTML, CSS,
+            Tailwind, JavaScript, and React. Passionate about solving problems
+            and bringing ideas to life.
           </p>
-          
+
           <div className="flex flex-wrap gap-4">
-            <button className="px-4 sm:px-6 py-2 sm:py-3 cursor-pointer border-2 border-[#138086] text-[#138086] font-bold rounded-xl hover:bg-[#f0fdfa] transition-all text-sm sm:text-base active:scale-95">
+            <button
+              onClick={downloadCV}
+              className="px-4 sm:px-6 py-2 sm:py-3 cursor-pointer border-2 border-[#138086] text-[#138086] font-bold rounded-xl hover:bg-[#f0fdfa] transition-all text-sm sm:text-base active:scale-95"
+            >
               Download CV
             </button>
             <button
@@ -47,15 +60,14 @@ const openWhatsApp = () => {
         </div>
 
         {/* Right: Person Image */}
-        <div className="w-full md:w-1/2 relative  flex items-center justify-center">
+        <div className="w-full md:w-1/2 relative  flex items-center justify-center px-4">
           {/* Transparent or cut-out image of the person */}
-          <img 
+          <img
             src={personImage}
-            alt="Hammad Khan" 
-            className="object-cover border border-[40px] border-[#E7F2F3] rounded-full"
+            alt="Hammad Khan"
+            className="object-cover border border-[40px] border-[#ddeef0] sm:border-[#E7F2F3] rounded-full md:shadow-[0_0_20px_rgba(161,204,207,0.4)] md:hover:shadow-none md:hover:scale-95 transition-all"
           />
         </div>
-
       </div>
     </section>
   );

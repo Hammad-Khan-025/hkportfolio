@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../assets/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from "react";
+import logo from "../assets/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [activeTab, setActiveTab] = useState('#home'); // default active tab
+  const [activeTab, setActiveTab] = useState("#home"); // default active tab
 
   const NAVBAR_HEIGHT = 88; // px, 5.5rem
   const whatsappNumber = "+923169343846";
 
-const openWhatsApp = () => {
-  window.open(`https://wa.me/${whatsappNumber}`, "_blank");
-};
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/${whatsappNumber}`, "_blank");
+  };
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: "Home", href: "#home" },
+    { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   // Handle scroll to show/hide navbar
@@ -49,8 +49,8 @@ const openWhatsApp = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   // Handle nav link click
@@ -66,7 +66,7 @@ const openWhatsApp = () => {
 
     window.scrollTo({
       top: targetY + offset,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
 
     setActiveTab(href); // Set clicked tab as active
@@ -79,7 +79,7 @@ const openWhatsApp = () => {
         className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between
         px-6 sm:px-10 md:px-28 min-h-[5.5rem] bg-white shadow-sm
         transition-transform duration-300 ${
-          showNavbar ? 'translate-y-0' : '-translate-y-full'
+          showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         {/* Logo */}
@@ -87,7 +87,7 @@ const openWhatsApp = () => {
           src={logo}
           alt="Logo"
           className="w-16 sm:w-20 cursor-pointer"
-          onClick={() => handleNavClick('#home')}
+          onClick={() => handleNavClick("#home")}
         />
 
         {/* Desktop Nav */}
@@ -98,8 +98,8 @@ const openWhatsApp = () => {
               onClick={() => handleNavClick(link.href)}
               className={`relative font-semibold transition-colors duration-200 px-1 cursor-pointer ${
                 activeTab === link.href
-                  ? 'text-[#134e4a]'
-                  : 'text-[#138086] hover:text-[#134e4a]'
+                  ? "text-[#134e4a]"
+                  : "text-[#138086] hover:text-[#134e4a]"
               }`}
             >
               {link.name}
@@ -124,7 +124,6 @@ const openWhatsApp = () => {
           Let's Talk
         </button>
 
-
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(true)}
@@ -138,14 +137,14 @@ const openWhatsApp = () => {
       <div
         onClick={() => setMenuOpen(false)}
         className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
-          menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       />
 
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 left-0 h-full w-[75%] bg-white z-50 shadow-lg transform transition-transform duration-300 ${
-          menuOpen ? 'translate-x-0' : '-translate-x-full'
+          menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Header */}
@@ -167,8 +166,8 @@ const openWhatsApp = () => {
               onClick={() => handleNavClick(link.href)}
               className={`text-base font-semibold px-3 py-2 rounded-md w-full text-left transition-colors duration-200 ${
                 activeTab === link.href
-                  ? 'bg-[#f0f9f8] text-[#134e4a]'
-                  : 'text-[#138086] hover:text-[#134e4a] hover:bg-[#f0f9f8]'
+                  ? "bg-[#d5eeec] text-[#134e4a]"
+                  : "text-[#138086] hover:text-[#134e4a] hover:bg-[#f0f9f8]"
               }`}
             >
               {link.name}
@@ -182,7 +181,6 @@ const openWhatsApp = () => {
           >
             Let's Talk
           </button>
-
         </div>
       </div>
     </>

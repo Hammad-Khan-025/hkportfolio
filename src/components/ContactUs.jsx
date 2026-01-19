@@ -45,7 +45,7 @@ const ContactSection = () => {
             <span className="h-px w-6 bg-teal-700"></span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#138086] text-center sm:text-left">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#308074] text-center sm:text-left">
             Get In Touch
           </h2>
         </div>

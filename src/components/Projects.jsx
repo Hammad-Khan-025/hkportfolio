@@ -1,103 +1,91 @@
 import React, { useState } from "react";
-import orbitPulseImg from "../assets/project-images/orbitPulseImg.PNG";
-import printflyImg from "../assets/project-images/printflyImg.PNG";
-import projectsImg from "../assets/project-images/projectsImg.PNG";
-import TicTacImg from "../assets/project-images/TicTacImg.PNG";
-import databaseImg from "../assets/project-images/databaseImg.PNG";
-import ecommerceImg from "../assets/project-images/ecommerceImg.PNG";
-import todoImg from "../assets/project-images/todoImg.PNG";
-import currencyImg from "../assets/project-images/currencyImg.PNG";
-import therapyImg from "../assets/project-images/therapyImg.PNG";
-import investmentImg from "../assets/project-images/investmentImg.PNG";
-import landingImg1 from "../assets/project-images/landingImg1.PNG";
-import landingImg2 from "../assets/project-images/landingImg2.PNG";
 
+// Projects array using direct URLs to public folder
 const projects = [
   {
     id: "1",
     title: "Landing page Tailwind",
     link: "https://hammad-khan-025.github.io/Tailwind-Landing/",
-    imageUrl: landingImg1,
+    imageUrl: "/public/project-images/landingImg1.png",
   },
   {
     id: "2",
     title: "Landing page Bootstrap",
     link: "https://hammad-khan-025.github.io/Landing/Landing.html",
-    imageUrl: landingImg2,
+    imageUrl: "/public/project-images/landingImg2.png",
   },
   {
     id: "3",
     title: "Investment Calculator",
     link: "https://investment-calc-psi.vercel.app/",
-    imageUrl: investmentImg,
+    imageUrl: "/public/project-images/investmentImg.png",
   },
   {
     id: "4",
     title: "Therapy Nails Spa",
     link: "https://hammad-khan-025.github.io/TherapyNails/public/",
-    imageUrl: therapyImg,
+    imageUrl: "/public/project-images/therapyImg.png",
   },
   {
     id: "5",
     title: "Currency App",
     link: "https://hammad-khan-025.github.io/CurrencyApp/",
-    imageUrl: currencyImg,
+    imageUrl: "/public/project-images/currencyImg.png",
   },
   {
     id: "6",
     title: "Todo App",
     link: "https://hammad-khan-025.github.io/TodoApp/",
-    imageUrl: todoImg,
+    imageUrl: "/public/project-images/todoImg.png",
   },
   {
     id: "7",
     title: "Ecommerce Website",
     link: "https://hammad-khan-025.github.io/E-commerce/",
-    imageUrl: ecommerceImg,
+    imageUrl: "/public/project-images/ecommerceImg.png",
   },
   {
     id: "8",
     title: "RealTime Database",
     link: "https://realtime-db-ten.vercel.app/",
-    imageUrl: databaseImg,
+    imageUrl: "/public/project-images/databaseImg.png",
   },
   {
     id: "9",
     title: "Tic Tac Toe Game",
     link: "https://tic-tac-toe-cyan-zeta-64.vercel.app/",
-    imageUrl: TicTacImg,
+    imageUrl: "/public/project-images/TicTacImg.png",
   },
   {
     id: "10",
     title: "Projects Dashboard",
     link: "https://dashboard-khaki-nu.vercel.app/",
-    imageUrl: projectsImg,
+    imageUrl: "/public/project-images/projectsImg.png",
   },
   {
     id: "11",
     title: "Printfly",
     link: "https://printfly.vercel.app/",
-    imageUrl: printflyImg,
+    imageUrl: "/public/project-images/printflyImg.png",
   },
   {
     id: "12",
     title: "Orbit Pulse",
     link: "https://orbitpulse365.vercel.app/",
-    imageUrl: orbitPulseImg,
+    imageUrl: "/public/project-images/orbitPulseImg.png",
   },
 ];
 
 const RecentProjects = () => {
   const [showAll, setShowAll] = useState(false);
 
-  // Projects to display based on state
   const displayedProjects = showAll
     ? [...projects].reverse()
     : [...projects].reverse().slice(0, 6);
 
   return (
     <section className="bg-[#f0f9f8] py-20 px-6">
-      {/* Header Section */}
+      {/* Header */}
       <div className="text-center mb-16">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="h-[1px] w-10 bg-[#2d6a61]"></div>
@@ -121,7 +109,6 @@ const RecentProjects = () => {
             rel="noopener noreferrer"
             className="relative rounded-lg flex items-center justify-center overflow-hidden group cursor-pointer"
           >
-            {/* Project Image */}
             <div className="w-full h-full flex flex-col items-center justify-center">
               <img
                 src={project.imageUrl}
@@ -133,7 +120,6 @@ const RecentProjects = () => {
               </h1>
             </div>
 
-            {/* Overlay with "View Project" */}
             <div className="absolute inset-0 bg-[#138086]/90 flex items-center justify-center opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 rounded-lg">
               <span className="text-white border px-6 py-2 rounded-md font-semibold text-sm md:text-base">
                 View Project
@@ -143,7 +129,6 @@ const RecentProjects = () => {
         ))}
       </div>
 
-      {/* Toggle See More / See Less */}
       {projects.length > 6 && (
         <div className="flex justify-center mt-12">
           <button

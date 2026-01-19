@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Glegoo:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-bangla: "Anek Bangla", "sans-serif";
+  --font-glegoo: "Glegoo", "sans-serif";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-glegoo) !important;
+}

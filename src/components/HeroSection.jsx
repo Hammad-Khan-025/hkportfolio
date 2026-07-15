@@ -70,14 +70,14 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-4">
             <button
               onClick={openWhatsApp}
-              className="px-6 py-3 cursor-pointer bg-[#138086] text-white font-bold rounded-xl hover:bg-[#10696e] hover:shadow-lg hover:shadow-[#138086]/30 active:scale-95 transition-all text-sm sm:text-base flex items-center gap-2"
+              className="px-6 py-2 sm:py-3 cursor-pointer bg-[#138086] text-white font-bold rounded-xl hover:bg-[#10696e] hover:shadow-lg hover:shadow-[#138086]/30 active:scale-95 transition-all text-sm sm:text-base flex items-center gap-2"
             >
               Hire Me
             </button>
 
             <button
               onClick={downloadCV}
-              className="px-6 py-3 cursor-pointer border-2 border-[#138086]/30 text-[#138086] font-bold rounded-xl bg-white hover:border-[#138086] hover:bg-[#138086]/5 active:scale-95 transition-all text-sm sm:text-base"
+              className="px-6 py-2 sm:py-3 cursor-pointer border-2 border-[#138086]/30 text-[#138086] font-bold rounded-xl bg-white hover:border-[#138086] hover:bg-[#138086]/5 active:scale-95 transition-all text-sm sm:text-base"
             >
               Download CV
             </button>

@@ -82,22 +82,22 @@ export default function SkillsSection() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="group bg-white rounded-2xl border border-[#138086]/30 hover:border-[#138086] p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="group bg-white rounded-2xl border border-[#138086]/30 hover:border-[#138086] px-2 sm:px-6 py-5 sm:py-10 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
               {/* Icon */}
-              <div className="flex justify-center mb-5">
+              <div className="flex justify-center mb-1 sm:mb-5">
                 <div className="text-5xl text-[#138086] group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   {skill.icon}
                 </div>
               </div>
 
               {/* Skill Name */}
-              <h3 className="text-center text-lg font-semibold text-[#134e4a]">
+              <h3 className="text-center text-base sm:text-lg font-semibold text-[#134e4a]">
                 {skill.name}
               </h3>
 
               {/* Stars */}
-              <div className="flex justify-center mt-4 gap-1">
+              <div className="flex justify-center mt-5 gap-1">
                 {[...Array(5)].map((_, index) =>
                   index < skill.rating ? (
                     <FaStar key={index} className="text-[#2d6a61] text-sm" />

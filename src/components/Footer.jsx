@@ -40,8 +40,8 @@ const Footer = () => {
             ABOUT ME
           </h1>
           <p className="text-gray-500 leading-relaxed max-w-xs">
-            I've been working as a Frontend developer for more than one year,
-            and have experience in React JS framework.
+            Frontend Developer with over one year of experience building modern,
+            responsive, and user-friendly web applications.
           </p>
         </div>
 

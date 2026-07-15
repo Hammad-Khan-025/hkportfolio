@@ -15,3 +15,28 @@ html {
 body {
   font-family: var(--font-glegoo) !important;
 }
+.kite {
+  transform: rotate(45deg) scale(0.9);
+  border: 2px solid rgba(19, 128, 134, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.45s ease;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide-active .kite {
+  transform: rotate(45deg) scale(1);
+  border-color: #138086;
+  box-shadow: 0 18px 40px rgba(19, 128, 134, 0.18);
+}
+
+.swiper-slide:not(.swiper-slide-active) .kite {
+  opacity: 0.8;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}

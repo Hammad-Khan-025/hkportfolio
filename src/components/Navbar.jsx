@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FaArrowRight } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Contact", href: "#contact" },
   ];
 
   // Handle scroll to show/hide navbar
@@ -76,61 +77,79 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between
-        px-6 sm:px-10 md:px-28 min-h-[5.5rem] bg-white shadow-sm
-        transition-transform duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 bg-white/80 backdrop-blur-md border-b border-gray-200/60 ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        {/* Logo */}
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-16 sm:w-20 cursor-pointer"
-          onClick={() => handleNavClick("#home")}
-        />
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-20 sm:h-24 px-6 sm:px-8 lg:px-10 ">
+          {/* Logo */}
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-16 sm:w-20 cursor-pointer"
+            onClick={() => handleNavClick("#home")}
+          />
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link, index) => (
-            <button
-              key={link.name}
-              onClick={() => handleNavClick(link.href)}
-              className={`relative font-semibold transition-colors duration-200 px-1 cursor-pointer ${
-                activeTab === link.href
-                  ? "text-[#134e4a]"
-                  : "text-[#138086] hover:text-[#134e4a]"
-              }`}
-            >
-              {link.name}
-              {/* Border bottom for active tab */}
-              {activeTab === link.href && (
-                <span
-                  className={`absolute left-0 -bottom-1 h-0.5 bg-[#138086] w-full transition-all`}
-                  style={{
-                    transform: `translateX(0)`,
-                  }}
-                />
-              )}
-            </button>
-          ))}
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-10">
+            {navLinks.map((link, index) => (
+              <button
+                key={link.name}
+                onClick={() => handleNavClick(link.href)}
+                className={`relative font-medium tracking-wide transition-colors duration-200 px-1 cursor-pointer ${
+                  activeTab === link.href
+                    ? "text-[#134e4a]"
+                    : "text-[#138086] hover:text-[#134e4a]"
+                }`}
+              >
+                {link.name}
+                {/* Border bottom for active tab */}
+                {activeTab === link.href && (
+                  <span
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#138086] w-full transition-all`}
+                    style={{
+                      transform: `translateX(0)`,
+                    }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={openWhatsApp}
+            className="
+    hidden md:inline-flex
+    items-center
+    justify-center
+    gap-3
+    
+    bg-[#138086]
+    hover:bg-[#10696d]
+    text-white
+    font-semibold
+    px-6
+    py-3
+    rounded-xl
+    transition-all
+    duration-300
+    hover:shadow-lg
+    cursor-pointer
+  "
+          >
+            Let's talk
+            <FaArrowRight />
+          </button>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden text-[#138086] text-2xl"
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </button>
         </div>
-
-        {/* CTA */}
-        <button
-          onClick={openWhatsApp}
-          className="hidden md:block bg-[#138086] hover:bg-[#134e4a] text-white px-6 py-2.5 rounded-md font-bold tracking-wide transition-all uppercase text-xs sm:text-sm active:scale-95 cursor-pointer"
-        >
-          Let's Talk
-        </button>
-
-        {/* Hamburger */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="md:hidden text-[#138086] text-2xl"
-        >
-          <FontAwesomeIcon icon={faBars} />
-        </button>
       </nav>
 
       {/* Overlay */}
@@ -143,13 +162,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-[75%] bg-white z-50 shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-[80%] bg-white z-50 shadow-lg transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b">
-          <img src={logo} alt="Logo" className="w-14" />
+          <img src={logo} alt="Logo" className="w-16" />
           <button
             onClick={() => setMenuOpen(false)}
             className="text-xl text-gray-600"

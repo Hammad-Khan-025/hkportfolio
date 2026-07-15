@@ -1,146 +1,268 @@
-import React, { useState } from "react";
+"use client";
 
-// Projects array using direct URLs to public folder
+import React, { useState } from "react";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 const projects = [
   {
-    id: "1",
-    title: "Landing page Tailwind",
-    link: "https://hammad-khan-025.github.io/Tailwind-Landing/",
-    imageUrl: "/project-images/landingImg1.PNG",
-  },
-  {
-    id: "2",
-    title: "Landing page Bootstrap",
-    link: "https://hammad-khan-025.github.io/Landing/Landing.html",
-    imageUrl: "/project-images/landingImg2.PNG",
-  },
-  {
-    id: "3",
-    title: "Investment Calculator",
-    link: "https://investment-calc-psi.vercel.app/",
-    imageUrl: "/project-images/InvestmentImg.PNG",
-  },
-  {
-    id: "4",
-    title: "Therapy Nails Spa",
-    link: "https://hammad-khan-025.github.io/TherapyNails/public/",
-    imageUrl: "/project-images/therapyImg.PNG",
-  },
-  {
-    id: "5",
-    title: "Currency App",
-    link: "https://hammad-khan-025.github.io/CurrencyApp/",
-    imageUrl: "/project-images/currencyImg.PNG",
-  },
-  {
-    id: "6",
-    title: "Todo App",
-    link: "https://hammad-khan-025.github.io/TodoApp/",
-    imageUrl: "/project-images/todoImg.PNG",
-  },
-  {
-    id: "7",
-    title: "Ecommerce Website",
-    link: "https://hammad-khan-025.github.io/E-commerce/",
-    imageUrl: "/project-images/ecommerceImg.PNG",
-  },
-  {
-    id: "8",
-    title: "RealTime Database",
-    link: "https://realtime-db-ten.vercel.app/",
-    imageUrl: "/project-images/databaseImg.PNG",
-  },
-  {
-    id: "9",
-    title: "Tic Tac Toe Game",
-    link: "https://tic-tac-toe-cyan-zeta-64.vercel.app/",
-    imageUrl: "/project-images/TicTacImg.PNG",
-  },
-  {
-    id: "10",
-    title: "Projects Dashboard",
-    link: "https://dashboard-khaki-nu.vercel.app/",
-    imageUrl: "/project-images/projectsImg.PNG",
-  },
-  {
-    id: "11",
-    title: "Printfly",
-    link: "https://printfly.vercel.app/",
-    imageUrl: "/project-images/printflyImg.png",
-  },
-  {
-    id: "12",
+    id: 1,
     title: "Orbit Pulse",
-    link: "https://orbitpulse365.vercel.app/",
+    description:
+      "A modern business dashboard featuring responsive layouts, reusable components, and a clean user interface.",
     imageUrl: "/project-images/orbitPulseImg.png",
+    live: "https://orbitpulse365.vercel.app/",
+    technologies: ["React.js", "Tailwind", "JavaScript"],
+  },
+
+  {
+    id: 2,
+    title: "PrintFly",
+    description:
+      "A responsive printing service website with elegant visuals and a seamless browsing experience.",
+    imageUrl: "/project-images/printflyImg.png",
+    live: "https://printfly.vercel.app/",
+    technologies: ["React.js", "Tailwind", "CSS"],
+  },
+
+  {
+    id: 3,
+    title: "Projects Dashboard",
+    description:
+      "A responsive dashboard for managing projects with reusable UI components and interactive layouts.",
+    imageUrl: "/project-images/projectsImg.PNG",
+    live: "https://dashboard-khaki-nu.vercel.app/",
+    technologies: ["React", "Tailwind"],
+  },
+
+  {
+    id: 4,
+    title: "Realtime Database",
+    description:
+      "A CRUD application integrated with Firebase Realtime Database for instant synchronization.",
+    imageUrl: "/project-images/databaseImg.PNG",
+    live: "https://realtime-db-ten.vercel.app/",
+    technologies: ["React.js", "Firebase", "Bootstrap"],
+  },
+
+  {
+    id: 5,
+    title: "E-Commerce Website",
+    description:
+      "A modern ecommerce website designed with responsive layouts and engaging product sections.",
+    imageUrl: "/project-images/ecommerceImg.PNG",
+    live: "https://hammad-khan-025.github.io/E-commerce/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+  },
+
+  {
+    id: 6,
+    title: "Currency Converter",
+    description:
+      "A responsive currency converter that provides fast and accurate exchange calculations.",
+    imageUrl: "/project-images/currencyImg.PNG",
+    live: "https://hammad-khan-025.github.io/CurrencyApp/",
+    technologies: ["React.js", "REST API", "CSS"],
+  },
+
+  {
+    id: 7,
+    title: "Todo App",
+    description:
+      "A task management application supporting CRUD operations and local data persistence.",
+    imageUrl: "/project-images/todoImg.PNG",
+    live: "https://hammad-khan-025.github.io/TodoApp/",
+    technologies: ["React.js", "Local Storage", "CSS"],
+  },
+
+  {
+    id: 8,
+    title: "Investment Calculator",
+    description:
+      "An investment calculator with dynamic calculations and a responsive user interface.",
+    imageUrl: "/project-images/InvestmentImg.PNG",
+    live: "https://investment-calc-psi.vercel.app/",
+    technologies: ["React", "JavaScript", "CSS"],
+  },
+
+  {
+    id: 9,
+    title: "Therapy Nails Spa",
+    description:
+      "A business website with elegant layouts, service pages and responsive design.",
+    imageUrl: "/project-images/therapyImg.PNG",
+    live: "https://hammad-khan-025.github.io/TherapyNails/public/",
+    technologies: ["Bootstrap", "JavaScript", "CSS"],
+  },
+
+  {
+    id: 10,
+    title: "Landing Page",
+    description:
+      "A clean landing page built with Tailwind CSS focusing on performance and responsiveness.",
+    imageUrl: "/project-images/landingImg1.PNG",
+    live: "https://hammad-khan-025.github.io/Tailwind-Landing/",
+    technologies: ["Tailwind", "HTML", "JavaScript"],
+  },
+
+  {
+    id: 11,
+    title: "Bootstrap Landing",
+    description:
+      "A responsive marketing landing page with reusable Bootstrap components.",
+    imageUrl: "/project-images/landingImg2.PNG",
+    live: "https://hammad-khan-025.github.io/Landing/Landing.html",
+    technologies: ["Bootstrap", "CSS", "JavaScript"],
+  },
+
+  {
+    id: 12,
+    title: "Tic Tac Toe",
+    description:
+      "A classic Tic Tac Toe game developed with React featuring smooth gameplay.",
+    imageUrl: "/project-images/TicTacImg.PNG",
+    live: "https://tic-tac-toe-cyan-zeta-64.vercel.app/",
+    technologies: ["React.js", "JavaScript", "CSS"],
   },
 ];
 
-const RecentProjects = () => {
+export default function RecentProjects() {
   const [showAll, setShowAll] = useState(false);
 
-  const displayedProjects = showAll
-    ? [...projects].reverse()
-    : [...projects].reverse().slice(0, 6);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
-    <section className="bg-[#f0f9f8] py-20 px-6">
-      {/* Header */}
-      <div className="text-center mb-16">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="h-[1px] w-10 bg-[#2d6a61]"></div>
-          <span className="text-[#138086] font-medium tracking-widest text-sm uppercase">
-            Portfolio
-          </span>
-          <div className="h-[1px] w-10 bg-[#2d6a61]"></div>
+    <section className="py-12 sm:py-24 bg-[#f0f9f8]">
+      <div className="max-w-5xl 2xl:max-w-7xl mx-auto px-6">
+        {/* Heading */}
+
+        <div className="text-center mb-10 sm:mb-20">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-[2px] bg-[#138086]" />
+
+            <span className="uppercase tracking-[3px] text-sm font-semibold text-[#138086]">
+              Portfolio
+            </span>
+
+            <div className="w-10 h-[2px] bg-[#138086]" />
+          </div>
+
+          <h2 className="text-2xl md:text-4xl font-bold font-serif text-[#134e4a]">
+            Featured Projects
+          </h2>
+
+          <p className="mt-5 max-w-2xl mx-auto text-gray-600 leading-7 text-sm sm:text-base">
+            Modern, responsive web applications crafted with clean code and
+            intuitive user experiences.
+          </p>
         </div>
-        <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1a4d45]">
-          Recent Projects
-        </h2>
-      </div>
 
-      {/* Grid Layout */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        {displayedProjects.map((project) => (
-          <a
-            key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative rounded-lg flex items-center justify-center overflow-hidden group cursor-pointer"
-          >
-            <div className="w-full h-full flex flex-col items-center justify-center">
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="object-contain drop-shadow-2xl rounded-t-xl transition-transform duration-500 group-hover:scale-105"
-              />
-              <h1 className="bg-[#aedbdf]/40 w-full text-center py-3 rounded-b-xl tracking-wide font-semibold text-[#1b3b37] text-sm md:text-base">
-                {project.title}
-              </h1>
+        {/* Grid */}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10">
+          {displayedProjects.map((project) => (
+            <div
+              key={project.id}
+              className="
+              group
+              bg-white
+              rounded-3xl
+              overflow-hidden
+              border
+              border-[#138086]/10
+              shadow-[0_20px_45px_rgba(19,128,134,0.15)]
+              hover:-translate-y-2
+              transition-all
+              duration-500
+              flex
+              flex-col
+              "
+            >
+              {/* Image */}
+
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="
+                  w-full
+                  h-60
+                  object-cover
+                  transition-transform
+                  duration-700
+                  group-hover:scale-105 
+                  "
+                />
+
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
+              </div>
+
+              {/* Content */}
+
+              <div className="flex flex-col flex-1 p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-[#134e4a]">
+                  {project.title}
+                </h3>
+
+                <p className="mt-2 text-sm text-gray-600 leading-6 tracking-wide line-clamp-2">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 rounded-full bg-[#138086]/10 text-[#138086] text-[11px] font-semibold"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {/* Bottom */}
+
+                {/* Styled Call to Action Button */}
+                <div className="pt-6 border-t border-white/5">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2.5 bg-[#138086] hover:bg-[#10696e] text-white px-5 py-3 rounded-xl font-bold text-[13px] tracking-wide transition-all duration-300 active:scale-[0.98] hover:shadow-lg hover:shadow-[#138086]/20 cursor-pointer"
+                  >
+                    <FaExternalLinkAlt className="text-xs" />
+                    Visit Website
+                  </a>
+                </div>
+              </div>
             </div>
-
-            <div className="absolute inset-0 bg-[#138086]/90 flex items-center justify-center opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 rounded-lg">
-              <span className="text-white border px-6 py-2 rounded-md font-semibold text-sm md:text-base">
-                View Project
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      {projects.length > 6 && (
-        <div className="flex justify-center mt-12">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="text-[#138086] border border-[#138086] py-2 px-5 rounded-lg font-bold text-xs sm:text-sm transition-all active:scale-95 cursor-pointer hover:bg-[#138086] hover:text-white"
-          >
-            {showAll ? "See Less Projects..." : "See More Projects..."}
-          </button>
+          ))}
         </div>
-      )}
+
+        {/* Button */}
+
+        {projects.length > 6 && (
+          <div className="flex justify-center mt-16">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="
+              px-6 sm:px-8
+              py-2 sm:py-3 text-sm
+              rounded-xl
+              border-2
+              border-[#138086]
+              text-[#138086]
+              font-semibold
+              transition-all
+              duration-300
+              hover:bg-[#138086]
+              hover:text-white
+              hover:shadow-lg
+              active:scale-95 cursor-pointer
+              "
+            >
+              {showAll ? "Show Less" : "View All Projects"}
+            </button>
+          </div>
+        )}
+      </div>
     </section>
   );
-};
-
-export default RecentProjects;
+}

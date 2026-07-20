@@ -207,7 +207,7 @@ export default function RecentProjects() {
                 </div>
 
                 {/* Styled Call to Action Button */}
-                <div className="pt-6 mt-auto border-t border-gray-100 dark:border-gray-700/60">
+                <div className="pt-6 mt-auto">
                   <a
                     href={project.live}
                     target="_blank"
